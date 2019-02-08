@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 
-public class BoresightCrosshair : MonoBehaviour
+namespace FLFlight.UI
 {
-    public Transform ship;
-    public float boresightDistance = 1000f;
-
-    void Update()
+    public class BoresightCrosshair : MonoBehaviour
     {
-        if (ship != null)
-        {
-            Vector3 boresightPos = (ship.transform.forward * boresightDistance) + ship.transform.position;
-            Vector3 screenPos = Camera.main.WorldToScreenPoint(boresightPos);
-            screenPos.z = 0f;
+        public Transform ship;
+        public float boresightDistance = 1000f;
 
-            transform.position = screenPos;
+        void Update()
+        {
+            if (ship != null)
+            {
+                Vector3 boresightPos = (ship.transform.forward * boresightDistance) + ship.transform.position;
+                Vector3 screenPos = Camera.main.WorldToScreenPoint(boresightPos);
+                screenPos.z = 0f;
+
+                transform.position = screenPos;
+            }
         }
     }
 }
