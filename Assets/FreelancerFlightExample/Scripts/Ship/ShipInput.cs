@@ -7,7 +7,8 @@ namespace FLFlight
     /// </summary>
     public class ShipInput : MonoBehaviour
     {
-        public float bankLimit = 35f;
+        [Tooltip("How far the ship will bank when turning.")]
+        [SerializeField] private float bankLimit = 35f;
 
         [Tooltip("Sensitivity in the pitch axis.\n\nIt's best to play with this value until you can get something the results in full input when at the edge of the screen.")]
         [SerializeField] private float pitchSensitivity = 2.5f;

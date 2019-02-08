@@ -5,24 +5,24 @@ namespace FLFlight
     public class CameraRig : MonoBehaviour
     {
         [Tooltip("The ship to follow around.")]
-        public Transform ship;
+        [SerializeField] private Transform ship = null;
 
         [Tooltip("The camera on this rig. Required for lookahead motions.")]
-        public Camera cam;
+        [SerializeField] private Camera cam = null;
 
         [Tooltip("The lookahead portion of the rig. This is a separate transform under the camera rig which is used only for the lookahead motions.")]
-        public Transform lookAheadRig;
+        [SerializeField] private Transform lookAheadRig = null;
 
         [Tooltip("Enable if the target to follow is being updated during FixedUpdate (e.g. if it is a Rigidbody using physics).")]
-        public bool useFixed = true;
+        [SerializeField] private bool useFixed = true;
 
         [Tooltip("How quickly the camera rotates to new positions. Tweak this values to get something that feels good. High values will result in tighter camera motion.")]
-        public float smoothSpeed = 10f;
+        [SerializeField] private float smoothSpeed = 10f;
 
         [Header("Lookahead Values")]
-        public float horizontalTurnAngle = 15f;
-        public float verticalTurnUpAngle = 5.0f;
-        public float verticalTurnDownAngle = 15.0f;
+        [SerializeField] private float horizontalTurnAngle = 15f;
+        [SerializeField] private float verticalTurnUpAngle = 5.0f;
+        [SerializeField] private float verticalTurnDownAngle = 15.0f;
 
         const float kSpeedSlope = 0.0002f;
 
@@ -63,7 +63,7 @@ namespace FLFlight
             // appearance of the ship swinging around in a really nice way.
             var mousePos = Input.mousePosition;
 
-            // Normalize screen positions so that the range is -1 to 1.
+            // Normalize screen positions so that the range is -1 to 1. Makes the math easier.
             var mouseScreenX = (mousePos.x - (Screen.width * 0.5f)) / (Screen.width * 0.5f);
             var mouseScreenY = -(mousePos.y - (Screen.height * 0.5f)) / (Screen.height * 0.5f);
 
@@ -84,6 +84,7 @@ namespace FLFlight
             lookAheadRig.localRotation = SmoothDamp.DampS(lookAheadRig.localRotation, Quaternion.Euler(-vertical, -horizontal, 0f), smoothSpeed, Time.deltaTime);
 
             // After rotating the look rig, the camera needs to continue pointing forwards.
+            // Point the camera at some point projected forwards from the ship.
             Vector3 lookaheadPosition = ship.transform.TransformPoint(Vector3.forward * 100f);
             cam.transform.rotation = Quaternion.LookRotation(lookaheadPosition - lookAheadRig.position, lookAheadRig.up);
         }

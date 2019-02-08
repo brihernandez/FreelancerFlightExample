@@ -5,13 +5,13 @@ namespace FLFlight
     public class SimpleCameraRig : MonoBehaviour
     {
         [Tooltip("The ship to follow around.")]
-        public Transform ship;
+        [SerializeField] private Transform ship = null;
 
         [Tooltip("Enable if the target to follow is being updated during FixedUpdate (e.g. if it is a Rigidbody using physics).")]
-        public bool useFixed = true;
+        [SerializeField] private bool useFixed = true;
 
         [Tooltip("How quickly the camera rotates to new positions. Tweak this values to get something that feels good. High values will result in tighter camera motion.")]
-        public float smoothSpeed = 10f;
+        [SerializeField] private float smoothSpeed = 10f;
 
         private void Update()
         {
