@@ -51,7 +51,7 @@ The typical approach for this method is to take the mouse position on the screen
 
 Freelancer does something quite different. While on the surface it appears to use a virtual joystick (and for years I believed this was the case) it is instead a fly by wire "turn towards" system very similar to [the Mouse Flight project](https://github.com/brihernandez/MouseFlight) project.
 
-Instead of using the mouse as direct joystick-like input, the mouse points at somewhere off in the distance and the ship then automatically turns toward that point. The camera being stuck behind the ship is why it appears to work like a virtual joystick. As long as you hold the mouse to the left of the screen, the ship will continually turn left because the "go to point" is perpetually to the ship's left.
+Instead of using the mouse as direct joystick-like input, the mouse cursor is used to project a point somewhere off in the distance, and the ship then automatically turns toward that point. The camera being stuck behind the ship is why it appears to work like a virtual joystick. As long as you hold the mouse to the left of the screen, the ship will continually turn left because the "go to point" is perpetually to the ship's left.
 
 This two channel autopilot takes care of the pitch and yaw. The roll channel is taken care of by the banking.
 
