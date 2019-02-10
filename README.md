@@ -28,11 +28,11 @@ As this is more of a demo/example than an asset, I won't be describing how to ap
 ## Camera Rigs
 There are two camera rigs included. The `SimpleCameraRig` contains the camera code necessary to make this whole system work. As described below, the camera must follow the ship in a specific way in order for the banking to work correctly. 
 
-![Demo plane](Screenshots/simplecamera.gif)
+![Simple Camera](Screenshots/simplecamera.gif)
 
 The `ComplexCameraRig` includes extra code to mimic the camera motion of Freelancer. The code in this rig is based off of the camera code I wrote for the [Freelancer Flight Simulator](https://www.youtube.com/watch?v=8-e403xdxgU) project. This is not necessary for the demo, but it's a fun camera that I think is worth including.
 
-![Demo plane](Screenshots/complexcamera.gif)
+![Complex Camera](Screenshots/complexcamera.gif)
 
 # Mechanics
 While on the surface this appears to be a virtual joystick type control scheme, it's actually more akin to an autopilot. Similar to [the Mouse Flight project](https://github.com/brihernandez/MouseFlight) the player does not directly control the ship. Instead, the player tells the ship where to go, and the ship then flies towards that point.
