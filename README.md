@@ -42,7 +42,7 @@ This is **not** how this example works, but it's a useful to contrast the differ
 
 ![Virtual joystick](Screenshots/virtualjoystick.png)
 
-The typical approach for this method is to take the mouse position on the screen, then translate it into normalized values meant to emulate a joystick. In the above example, the mouse cursor is up and to the right, which translates to joystick input of 0.8 yaw right, and 0.6 pitch up. Many games use this method as it is simple, consistent, and reliable.
+The typical approach for this method is to take the mouse position on the screen, then translate it into normalized values meant to emulate a joystick. In the above example, the mouse cursor is up and to the right, which translates to joystick input of 0.8 yaw right, and 0.6 pitch up. Many games use this method as it is simple, consistent, and reliable. This is the method used in the [ArcadeSpaceFlightExample project](https://github.com/brihernandez/ArcadeSpaceFlightExample).
 
 ## The "Turn Towards" Autopilot
 *Disclaimer: I do not have access to the Freelancer source code, so the following is speculation based on my experience.*
