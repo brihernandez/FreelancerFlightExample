@@ -6,7 +6,7 @@ This project is an example of Freelancer style mouse controls. One of the most n
 This project was built in **Unity 2017.3.1f1**.
 
 ## Download
-You can either clone the repository or [download the asset package](https://github.com/brihernandez/FreelancerFlightExample/raw/master/FreelancerFlightExample.unitypackage) located in the root.
+You can either clone the repository or [download the asset package](./FreelancerFlightExample.unitypackage) located in the root.
 
 ## Demo Controls
 ![Demo plane](Screenshots/controls.jpg)
